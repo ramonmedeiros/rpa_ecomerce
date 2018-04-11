@@ -14,3 +14,12 @@ Robot Framework here is waiting for a Remote selenium server, that listen on loc
 
 ```docker run --shm-size="512m" -e DBUS_SESSION_BUS_ADDRESS='/dev/null' -p 4444:4444 -p 5900:5900 --rm --name selenium selenium/standalone-chrome-debug ```
 
+# How to follow selenium interaction
+
+Using docker container, a new VNC session will be created at localhost:5900.
+
+# How to run
+
+Just run the script ./runTests.sh. It will verify if there is a running selenium at localhost:4444 and run the tests. To follow up the interaction, start your vnc client pointing to :5900.
+
+
