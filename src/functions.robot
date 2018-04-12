@@ -83,7 +83,7 @@ Go To Checkout
 
 Use Credit Card as Payment
     # waits for delivery tax calculation
-    Sleep   5s
+    Sleep   10s
     Click If Element Is Visible    ${USE_CREDIT_CARD}
     
     # let user see credit card info
