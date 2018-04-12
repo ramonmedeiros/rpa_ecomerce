@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import argparse, getpass, httplib, subprocess
+import argparse, getpass, httplib, os
 
 PYBOT_CMDLINE = "pybot --variable USER:%s --variable PASSWORD:%s --variable URL:%s --loglevel TRACE src/test.robot"
 SUBMARINO_URL = "https://www.submarino.com.br"
@@ -18,10 +18,7 @@ def isSeleniumRunning():
     return False
 
 def runTests(user, password, url):
-    p = subprocess.Popen((PYBOT_CMDLINE % (user, password, url)).split(), stdout=subprocess.PIPE)
-    for line in p.stdout:
-        print line
-    p.wait()
+    os.system(PYBOT_CMDLINE % (user, password, url))
 
 def main():
     parser = argparse.ArgumentParser()

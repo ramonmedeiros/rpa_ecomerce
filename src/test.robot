@@ -10,7 +10,7 @@ Suite Teardown    Tests Teardown
 Login User at Submarino
     Login User    ${USER}    ${PASSWORD}
 
-Search Product and Add To Cart
+Search Product 1 and Add To Cart
     Type Product on Search Bar    samsung galaxy s8 edge
     Click on Product With Specific Name    Smartphone Samsung Galaxy S8
 
@@ -21,7 +21,7 @@ Buy Product With Credit Card
 
     Use Credit Card As Payment
 
-Search Product and Add To Cart
+Search Product 2 and Add To Cart
     Go To    ${URL}
     Type Product on Search Bar    iphone 8 plus 64gb
     Click on Product With Specific Name    iPhone 8 Plus Prata 64GB
