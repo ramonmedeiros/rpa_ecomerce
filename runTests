@@ -34,8 +34,7 @@ def main():
         return 1
 
     # prompt password
-    #password = getpass.getpass()
-    password = "desafiocit"
+    password = getpass.getpass()
     runTests(args.user, password, args.url)
 
 main()

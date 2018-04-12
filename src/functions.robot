@@ -17,14 +17,15 @@ ${USE_CREDIT_CARD}       //li[contains(@id, 'payment-option-menu-CREDIT_CARD')]/
 ${ENTER_CART}            id=h_minicart
 ${OPEN_CART}             css=.crt-basquet
 ${REMOVE_FILE_CART}      //a[contains(@title, '$$')]/ancestor::ul[contains(@class, 'basket-item-wrapper')]/descendant::li[contains(@class, 'item--remove hidden-xs')]
-${PRODUCT_QUANTITY}     //a[contains(@title, '$$')]/ancestor::ul[contains(@class, 'basket-item-wrapper')]/descendant::option[contains(@value, 'qtd')]
+${PRODUCT_QUANTITY}      //a[contains(@title, '$$')]/ancestor::ul[contains(@class, 'basket-item-wrapper')]/descendant::option[contains(@value, 'qtd')]
+${HOME_BUTTON}           id=brand-navbar
 
 *** Keywords ***
 Open Browser At E-commerce
     #${CAPABILITIES}=    Return Chrome Options As Capabilities    
     Open Browser    url=${URL}    browser=googlechrome    remote_url=http://localhost:4444/wd/hub
     Maximize Browser Window
-    Wait Until Element Is Visible    ${LOG_IN_BUTTON}    10s
+    Waits And Focus Element    ${LOG_IN_BUTTON}    10s
 
 Tests Teardown
     Close Browser
@@ -76,17 +77,21 @@ Click Continue To Cart Button
 
 Go To Checkout
     # waits for delivery tax calculation
-    Sleep   3s
+    Sleep   5s
     Click If Element Is Visible   ${GO_TO_PAYMENT}
 
 Use Credit Card as Payment
     # waits for delivery tax calculation
-    Sleep   3s
+    Sleep   5s
     Click If Element Is Visible    ${USE_CREDIT_CARD}
+    
+    # let user see credit card info
+    Sleep    2s
 
 Remove Product From Cart
     [Arguments]    ${product_name}
-    Go To    ${URL}
+    Scroll Page To Location    0    0
+    Click If Element Is Visible    ${HOME_BUTTON}
 
     Click If Element Is Visible   ${ENTER_CART}
     Click If Element Is Visible   ${OPEN_CART}
