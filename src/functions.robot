@@ -36,6 +36,7 @@ Scroll Page To Location
 
 Waits And Focus Element
     [Arguments]    ${locator}    ${time}=10s
+    Wait Until Page Contains Element    ${locator}    ${time}
     Wait Until Element Is Visible    ${locator}    ${time}
     Mouse Over    ${locator}
 
