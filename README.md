@@ -22,4 +22,4 @@ Using docker container, a new VNC session will be created at localhost:5900. The
 
 Just run the script ./runTests.sh. It will verify if there is a running selenium at localhost:4444 and run the tests. To follow up the interaction, start your vnc client pointing to :5900.
 
-
+```./runTests ramon.desafio.cit@gmail.com https://www.submarino.com.br```
