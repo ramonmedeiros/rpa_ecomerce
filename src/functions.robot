@@ -90,8 +90,7 @@ Use Credit Card as Payment
 
 Remove Product From Cart
     [Arguments]    ${product_name}
-    Scroll Page To Location    0    0
-    Click If Element Is Visible    ${HOME_BUTTON}
+    Wait Until Keyword Succeeds   3x    0.3s    Go To    ${URL}
 
     Click If Element Is Visible   ${ENTER_CART}
     Click If Element Is Visible   ${OPEN_CART}
