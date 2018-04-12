@@ -16,7 +16,7 @@ Robot Framework here is waiting for a Remote selenium server, that listen on loc
 
 # How to follow selenium interaction
 
-Using docker container, a new VNC session will be created at localhost:5900.
+Using docker container, a new VNC session will be created at localhost:5900. The password is ```secret```
 
 # How to run
 
